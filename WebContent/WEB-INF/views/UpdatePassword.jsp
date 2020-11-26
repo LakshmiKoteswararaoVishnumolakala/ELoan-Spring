@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Funds Transfer</title>
+<title>Forgot Password</title>
 </head>
 <style>
     body
@@ -44,22 +44,23 @@
 </style>
 <body>
 <jsp:include page="header.jsp"/>
-<h2 align="center">Funds Transfer Page</h2>
+<h2 align="center"> Update Password</h2>
 <hr/>
- <div id="wrapper">
-	  <a href="HomePage">Home</a>
-      <br></br>
-	  <a href="TransferWithinIBS">Transfer with in the bank</a>
-	  <br></br>
-	  <a href="TransferOutsideBank">Transfer outside of the bank</a>
-	  <br></br>
-	  <a href="AddBeneficiary">Add Beneficiary</a>
-	  <br></br>
-	  <a href="ListOfBeneficiaries">View List of Beneficiaries</a>  
-	  <br></br>
-  	  <a href="index">Sign Out</a>
-  </div>
- <hr/>
+<form action="SetNewPassword" method="post">
+<div id="wrapper">
+		<label> Enter New Password</label>	
+		<input type ="text" name="NewPassword"/>
+		<br><br/>
+		<label> Re Enter New Password</label>	
+		<input type ="text" name="ReEnterNewPassword"/>
+		<br><br/>
+		<input type ="submit" value ="Submit"/>
+		<br><br/>		
+</div>
+</form>
+<hr/>
+		<a href=HomePage>Home</a>
+<hr/>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

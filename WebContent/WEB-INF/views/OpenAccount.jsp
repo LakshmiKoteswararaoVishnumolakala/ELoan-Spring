@@ -6,10 +6,47 @@
 <meta charset="ISO-8859-1">
 <title>Add Beneficiary</title>
 </head>
+<style>
+    body
+    {
+            font-family: inherit;
+            font-weight: 750;
+            background: lightgrey;  
+    }
+    h3
+    {
+       color: blue;
+    }
+    #wrapper
+    {
+        width= 40%;
+        margin: 5%;
+    }
+    a:hover
+    {
+        color: red;
+        background-color: aqua;
+    }
+    img
+    {
+        align-self: center;
+    }
+    .row:hover
+    {
+        color: white;
+        background-color: purple;
+    }
+    img{
+        border: solid;
+        border-color: purple;
+        margin: .5%;
+    }
+</style>
+
 <body>
 <H1>Add Account</H1>
 <form action="Open Account.jsp" method="post">
-
+ <div id="wrapper">
 		<table style="width: 80% , height:80%">
 			
 			<tr>
@@ -36,6 +73,7 @@
 			</tr>
 			
 		</table>
+</div>
 </form>		
 </body>
 </html>
