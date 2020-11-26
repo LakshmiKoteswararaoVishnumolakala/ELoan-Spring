@@ -4,9 +4,11 @@ package com.wf.training.spring.web.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -90,17 +92,18 @@ public class HomeController
 	}	
 
 	@PostMapping("/saveUserDetails")
-	public ModelAndView saveUserDetails(User user)
+	public String saveUserDetails(User user,Model model)
 	{
-	ModelAndView mvUser = new ModelAndView("RegistrationConfirmation");
+	//ModelAndView mvUser = new ModelAndView("RegistrationConfirmation");
 		//mv.setViewName("employee-profile-confirm");
 		//place the data in model container
-		mvUser.addObject("User",user);		
+		model.addAttribute("user",user);
+		//mvUser.addObject("User",user);		
 	
 		//String RelationShip = request.getParameter("BankRelationship");		
 		//System.out.println("from Post:"+RelationShip+"");
-		//return "RegistrationConfirmation";
-		return mvUser;	
+		return "RegistrationConfirmation";
+		//return mvUser;	
 	}	
 	@RequestMapping("/ForgotPassword")
 	public String ForgotPassword()
@@ -108,6 +111,25 @@ public class HomeController
 		
 		return "ForgotPassword";//~forward
 	}	
+	
+	@PostMapping("/ForgotPassword")	
+	 //User user,Model model,String NewPassword, String ReEnterNewPassword
+	public String ForgotPassword(User user, Model model, @RequestParam("NewPassword") String newpassword,@RequestParam("ReEnterNewPassword") String reEnterNewPassword)
+	{
+		if (newpassword.contentEquals(reEnterNewPassword))
+		{
+			user.setPassword(newpassword);
+			System.out.println("New Password is:"+user.getPassword());		
+			//place the data in model container
+			model.addAttribute("User",user);
+			return "ForgotPasswordConfimation";
+		}
+		else 
+		{
+			return "ForgotPassword";
+		}	
+	}
+	
 	@RequestMapping("*")
 	public String badRequest()
 	{
