@@ -6,11 +6,56 @@
 <meta charset="ISO-8859-1">
 <title>User Registration</title>
 </head>
+<style>
+    body
+    {
+            font-family: inherit;
+            font-weight: 750;
+            background: lightgrey;  
+    }
+    h3
+    {
+       color: blue;
+    }
+    #wrapper
+    {
+        width= 40%;
+        margin: 5%;
+    }
+    a:hover
+    {
+        color: red;
+        background-color: aqua;
+    }
+    img
+    {
+        align-self: center;
+    }
+    .row:hover
+    {
+        color: white;
+        background-color: purple;
+    }
+    img{
+        border: solid;
+        border-color: purple;
+        margin: .5%;
+    }
+</style>
 <body>
 <jsp:include page="header.jsp"/>
 <h2 align="center">New User Registration Page</h2>
+<%
+		int CustomerID =100000+(int) (Math.random()*(1000000-100000)+1);
+		
+%>
 <hr/>
 <form action="saveUserDetails" method="post">
+ <div id="wrapper">
+ 		<label>Customer ID</label>  	
+  		<input type="text" name="CustomerID" value="<%=CustomerID%>" readonly/>
+  		<br><br/>  		
+  		<input type="hidden" name="Password" value="" />
 		<label for="BankRelationship">Select Relationship with Bank:</label>
 		<select name="BankRelationship" id="BankRelationship">
 		  <option value="Customer">Customer</option>		
@@ -95,6 +140,7 @@
 		<br><br/>
 			<input type ="submit" value ="Register"/>
 		<br><br/>		
+</div>
 </form>
 <hr/>
 		<a href=index>Go to Login Page</a>

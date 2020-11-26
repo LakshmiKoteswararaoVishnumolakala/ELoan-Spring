@@ -4,45 +4,76 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Funds Transfer with in Bank</title>
 </head>
+<style>
+    body
+    {
+            font-family: inherit;
+            font-weight: 750;
+            background: lightgrey;  
+    }
+    h3
+    {
+       color: blue;
+    }
+    #wrapper
+    {
+        width= 40%;
+        margin: 5%;
+    }
+    a:hover
+    {
+        color: red;
+        background-color: aqua;
+    }
+    img
+    {
+        align-self: center;
+    }
+    .row:hover
+    {
+        color: white;
+        background-color: purple;
+    }
+    img{
+        border: solid;
+        border-color: purple;
+        margin: .5%;
+    }
+</style>
+
 <body> 
-<br><br/>
-			Fund Transfer Page. 
-           <h3>Within IBS Transfers</h3>
-		<br><br/>			
-		<br>	
+<jsp:include page="header.jsp"/>
+<h2 align="center">Fund Transfer with in the bank</h2>
+<hr/>
+ <div id="wrapper">
+	
 		<label for="Relation">Select From Account:</label>
 			<select name="MyAccount" id="fromAccount">
 			<option value="select">Select Account...</option>
 			  <option value="account">My Account</option>					
-			</select>		
-		<br/>		
-		<br>
+			</select>	
+			<br><br/>
 			<label for="Relation">Select Added Payee:</label>
 			<select name="Beneficiary" id="payee">
 			  <option value="payee1">Payee 1</option>		
 			  <option value="payee2">Payee 2</option>
 			  <option value="payee3">Payee 3</option>			
 			</select>
-		<br/>	
-		<br>
+		<br><br/>
 			<label> Enter Amount </label>	
 			<input type ="text" name="Amount"/>
-		<br/>	
 		<br><br/>
 		    <label>Remarks</label>
 			<input type ="text" value =""/>
 		<br><br/>
-		
-			
-		<br><br/>
 			<input type ="submit" value ="Submit"/>
 		<br><br/>
-		
+</div>
 		<hr/>
-			<a href=><u>Return</u></a>
-		<hr/>
-
+	<a href="HomePage">Home</a>
+<hr/>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

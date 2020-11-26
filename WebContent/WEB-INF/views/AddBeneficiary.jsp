@@ -4,13 +4,50 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AddorEditBeneficiary</title>
+<title>AddBeneficiary</title>
 </head>
+<style>
+    body
+    {
+            font-family: inherit;
+            font-weight: 750;
+            background: lightgrey;  
+    }
+    h3
+    {
+       color: blue;
+    }
+    #wrapper
+    {
+        width= 40%;
+        margin: 5%;
+    }
+    a:hover
+    {
+        color: red;
+        background-color: aqua;
+    }
+    img
+    {
+        align-self: center;
+    }
+    .row:hover
+    {
+        color: white;
+        background-color: purple;
+    }
+    img{
+        border: solid;
+        border-color: purple;
+        margin: .5%;
+    }
+</style>
 <body>
 <jsp:include page="header.jsp"/>
 <h2 align="center">Manage Beneficiaries</h2>
 <hr/>
 <form action="saveBenDetails" method="post">
+ <div id="wrapper">
 		<label> Beneficiary Account Number:</label>	
 		<input type ="text" name="BeneficiaryAccountNo"/>
 		<br><br/>
@@ -49,7 +86,8 @@
 		<input type="text" name ="Beneficiary_Contact"/>
 		<br><br/>		
 		<input type="submit" value ="Add"/>	
-		<br><br/>			
+		<br><br/>	
+</div>		
 </form>
 <hr/>
 	<a href="HomePage">Home</a>

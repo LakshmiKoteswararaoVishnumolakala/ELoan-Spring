@@ -1,4 +1,5 @@
 package com.wf.training.spring.web.model;
+import java.security.SecureRandom;
 
 public class User 
 {
@@ -25,6 +26,30 @@ public class User
 	private String PinCode;
 	private String PAN;
 	private String AADHAR;
+	private String CustomerID;
+	private String Password;
+	
+	public String getCustomerID() {
+		return CustomerID;
+	}
+	public void setCustomerID(String customerID) {
+		CustomerID = customerID;
+	}
+	public String getPassword() 
+	{		
+			return Password;		
+	}
+	public void setPassword(String password) 
+	{
+		if (password.contentEquals(""))
+		{
+			Password = generateRandomPassword(10);
+		}
+		else
+		{
+			Password = password;
+		}		
+	}
 	
 	public String getBankRelationship() {
 		return BankRelationship;
@@ -158,6 +183,29 @@ public class User
 	public void setAADHAR(String aADHAR) {
 		AADHAR = aADHAR;
 	}
-
+	// Function to generate random alpha-numeric password of specific length
+		public static String generateRandomPassword(int len)
+		{
+		    // ASCII range - alphanumeric (0-9, a-z, A-Z)
+		    final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	
+		    SecureRandom random = new SecureRandom();
+		    StringBuilder sb = new StringBuilder();
+	
+		    // each iteration of loop choose a character randomly from the given ASCII range
+		    // and append it to StringBuilder instance
+	
+		    for (int i = 0; i < len; i++) {
+		        int randomIndex = random.nextInt(chars.length());
+		        sb.append(chars.charAt(randomIndex));
+		    }
+	
+		    return sb.toString();
+		}
+		public static void main(String[] args) 
+		{
+		    int len = 10;
+		    System.out.println(generateRandomPassword(len));
+		}
 
 }

@@ -6,9 +6,46 @@
 <meta charset="ISO-8859-1">
 <title>Registration Confirmation</title>
 </head>
+<style>
+    body
+    {
+            font-family: inherit;
+            font-weight: 750;
+            background: lightgrey;  
+    }
+    h3
+    {
+       color: blue;
+    }
+    #wrapper
+    {
+        width= 40%;
+        margin: 5%;
+    }
+    a:hover
+    {
+        color: red;
+        background-color: aqua;
+    }
+    img
+    {
+        align-self: center;
+    }
+    .row:hover
+    {
+        color: white;
+        background-color: purple;
+    }
+    img{
+        border: solid;
+        border-color: purple;
+        margin: .5%;
+    }
+</style>
 <body>
 <jsp:include page="header.jsp"/>
 <h2 align="center">Registration Successful.</h2>
+ <div id="wrapper">
 <hr/>
 		<a href=index>Go to Login Page</a>
 <hr/>
@@ -17,7 +54,11 @@
 The param and paramValues objects give you access to the parameter values normally available through the request.getParameter and request.getParameterValues methods.
 For example, to access a parameter named order, use the expression ${param.order} or ${param["order"]}.
 --%>
-<h3> Here are the details you entered. Please check your email for Customer ID and Password.</h3>
+<h3> Please make a note of Customer ID and Password. </h3>
+<h4> Customer ID: ${user.getCustomerID()} </h4>
+<h4> Password(System Generated): ${user.getPassword()} </h4>
+<hr/>
+<h3> Following are your registration details:</h3>
 <h4> Bank Relationship: ${user.getBankRelationship()} </h4>
 <h4> Gender: ${user.getGender()}</h4>
 <h4> FirstName:${user.getFirstName()}</h4>
@@ -40,6 +81,7 @@ For example, to access a parameter named order, use the expression ${param.order
  <h4> PinCode:${user.getPinCode()}</h4>
 <h4> PAN:${user.getPAN()}</h4>
 <h4> AADHAR:${user.getAADHAR()}</h4>
+</div>
 <hr/>
 <jsp:include page="footer.jsp"/>
 </body>

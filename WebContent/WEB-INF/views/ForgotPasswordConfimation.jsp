@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Funds Transfer</title>
+<title>Reset Password</title>
 </head>
 <style>
     body
@@ -42,24 +42,18 @@
         margin: .5%;
     }
 </style>
+
 <body>
 <jsp:include page="header.jsp"/>
-<h2 align="center">Funds Transfer Page</h2>
-<hr/>
+<h2 align="center"> Password Reset Confirmation</h2>
  <div id="wrapper">
-	  <a href="HomePage">Home</a>
-      <br></br>
-	  <a href="TransferWithinIBS">Transfer with in the bank</a>
-	  <br></br>
-	  <a href="TransferOutsideBank">Transfer outside of the bank</a>
-	  <br></br>
-	  <a href="AddBeneficiary">Add Beneficiary</a>
-	  <br></br>
-	  <a href="ListOfBeneficiaries">View List of Beneficiaries</a>  
-	  <br></br>
-  	  <a href="index">Sign Out</a>
-  </div>
- <hr/>
+<hr/>
+<h4>Your Password has been changed successfully. </h4>
+<h4> Your  new Password is : ${user.getPassword()} </h4>
+<hr/>
+		<a href=index>Go to Login Page</a>
+</div>
 <jsp:include page="footer.jsp"/>
+
 </body>
 </html>

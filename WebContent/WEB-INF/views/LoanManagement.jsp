@@ -4,8 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registration Confirmation</title>
+<title>Loan Management Page</title>
 </head>
+
 <style>
     body
     {
@@ -42,13 +43,11 @@
         margin: .5%;
     }
 </style>
-
 <body>
 <jsp:include page="header.jsp"/>
-<h2 align="center">Beneficiary Registration Successful</h2>
+<h2 align="center">Loan Management System</h2>
 <hr/>
- <div id="wrapper">
-		<a href=ListOfBeneficiaries>View List of Beneficiaries</a>
+		<a href=CurrentLoan>View List of Current Loans Of User</a>
 <hr/>
 		<a href=HomePage>Go To Home Page</a>
 <hr/>
@@ -57,16 +56,41 @@
 The param and paramValues objects give you access to the parameter values normally available through the request.getParameter and request.getParameterValues methods.
 For example, to access a parameter named order, use the expression ${param.order} or ${param["order"]}.
 --%>
-<h3> Following Beneficiary details are added:</h3>
-<h4> BeneficiaryAccountNo: ${beneficiary.getBeneficiaryAccountNo()} </h4>
-<h4> BeneficiaryAccountName: ${beneficiary.getBeneficiaryAccountName()}</h4>
-<h4> IFSCcode:${beneficiary.getIFSCcode()}</h4>
-<h4> BankName:${beneficiary.getBankName()}</h4>
-<h4> BranchName:${beneficiary.getBranchName()}</h4>
-<h4> BranchCity:${beneficiary.getBranchCity()}</h4>
-<h4> EmailID:${beneficiary.getBeneficiary_Email()}</h4>
-<h4> Beneficiary_Contact:${beneficiary.getBeneficiary_Contact()}</h4>
+<!-- <h3> Following Beneficiary details are added:</h3> -->
+
+
  <div id="wrapper">
+		<label> Customer ID:</label>	
+		<input type ="text" name="CustomerID"/>
+		<br><br/>
+		
+		<label for="LoanCategory">Select Loan Type:</label>
+		<select name="LoanCategory" id="LoanCategory">
+		  <option value="HomeLoan">Home Loan</option>		
+		  <option value="CarLoan">Car Loan</option>
+		  <option value="EducationLoan">Education Loan</option>		
+		  <option value="PersonalLoan">Personal Loan</option>		
+		</select>	
+		<br><br/>
+		<label> Loan Amount:</label>	
+		<input type ="text" name="LoanAmount"/>
+		<br><br/>
+		
+		<label> Loan Interest:</label>
+		<input type="text" name="name" value="${loanmngmnt.interestrate}" />
+		<br><br/>
+		<label> Collector ID: </label>	
+		<input type ="text" name="CollectorID"/>
+		<br><br/>
+		
+		<!-- 
+			<label for="DateOfTransaction">Date :</label>
+	 	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+		<jsp:useBean id="date" class="java.util.Date" />
+		Current year is: <fmt:formatDate value="${date}" pattern="mmddyyyy" />
+		-->	
+</div>
+
 <hr/>
 <jsp:include page="footer.jsp"/>
 </body>
