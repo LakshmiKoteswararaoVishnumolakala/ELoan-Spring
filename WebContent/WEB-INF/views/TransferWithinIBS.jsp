@@ -47,6 +47,7 @@
 <jsp:include page="header.jsp"/>
 <h2 align="center">Fund Transfer with in the bank</h2>
 <hr/>
+<form action="transferInIBS" method="post"> 
  <div id="wrapper">
 	
 		<label for="Relation">Select From Account:</label>
@@ -61,16 +62,28 @@
 			  <option value="payee2">Payee 2</option>
 			  <option value="payee3">Payee 3</option>			
 			</select>
+			
+			<br>
+           <br>
+		   <input type="radio" id="imps" name="transferType" value="imps">
+           <label for="imps">IMPS</label><br>
+           <input type="radio" id="neft" name="transferType" value="neft">
+           <label for="neft">NEFT</label><br>
+           <input type="radio" id="rtgs" name="transferType" value="rtgs">
+           <label for="rtsg">RTGS</label>
+           
+           
 		<br><br/>
 			<label> Enter Amount </label>	
 			<input type ="text" name="Amount"/>
 		<br><br/>
 		    <label>Remarks</label>
-			<input type ="text" value =""/>
+			<input type ="text" id ="remarks" name="remarks" placeholder="enter remarks.."/>
 		<br><br/>
 			<input type ="submit" value ="Submit"/>
 		<br><br/>
 </div>
+</form>
 		<hr/>
 	<a href="HomePage">Home</a>
 <hr/>

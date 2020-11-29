@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="spring" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>AddBeneficiary</title>
 </head>
-<style>
+<style type="text/css">
     body
     {
             font-family: inherit;
@@ -41,54 +42,92 @@
         border-color: purple;
         margin: .5%;
     }
+    .error
+    {
+    	color:red;    
+    }
 </style>
+
 <body>
 <jsp:include page="header.jsp"/>
-<h2 align="center">Manage Beneficiaries</h2>
+<h2 align="center">Manage Beneficiaries</h2> 
 <hr/>
-<form action="saveBenDetails" method="post">
+<spring:form action ="saveBenDetails" method="post" modelAttribute="beneficiary"> 
  <div id="wrapper">
-		<label> Beneficiary Account Number:</label>	
-		<input type ="text" name="BeneficiaryAccountNo"/>
-		<br><br/>
-		<label> Beneficiary Name(as per Bank records):</label>	
-		<input type ="text" name="BeneficiaryAccountName"/>
-		<br><br/>
-		<label> IFSC Code: </label>	
-		<input type ="text" name="IFSCcode"/>
-		<br><br/>
-		<label for="BankName">Select Bank:</label>
-		<select name="BankName" id="BankName">
-		  <option value="HDFC Bank">HDFC Bank</option>		
-		  <option value="Axis Bank">Axis Bank</option>
-		  <option value="ICICI">ICICI</option>		
-		  <option value="SBI">SBI</option>		
-		</select>	
-		<br><br/>
-		<label for="BranchName">Select Branch:</label>
-		<select name="BranchName" id="BranchName">
-		  <option value="Kondapur">Kondapur</option>		
-		  <option value="Gachicbowli">Gachicbowli</option>
-		  <option value="Madhapur">Madhapur</option>		
-		  <option value="Ameerpet">Ameerpet</option>		
-		</select>		
-		<br><br/>
-			<label for="BranchCity">Select City:</label>
-			<select name="BranchCity" id="BranchCity">
-			  <option value="Hyderabad.">Hyderabad</option>		
-			  <option value="Bangalore.">Bangalore</option>		
-			</select>		
-		<br><br/>			
-		<label>Email ID</label>
-		<input type="text" name ="Beneficiary_Email"/>
-		<br><br/>	
-		<label>Enter Mobile #</label>
-		<input type="text" name ="Beneficiary_Contact"/>
-		<br><br/>		
-		<input type="submit" value ="Add"/>	
-		<br><br/>	
+ 		<div>
+	 		<div><spring:label path="benAccountNo">Beneficiary Account Number:</spring:label></div>
+			<div><spring:input path="benAccountNo" type ="text"/>
+				<spring:errors path="benAccountNo" cssClass="error"/>	
+			</div>
+		</div>		
+		<br/>
+		<div>
+		<div><spring:label path="benAccountName"> Beneficiary Name(as per Bank records):</spring:label></div>
+			<div><spring:input path="benAccountName" type ="text" />
+				<spring:errors path="benAccountName" cssClass="error"/>
+			</div>
+		</div>
+		<br/>
+		<div>
+		<div><spring:label path="benIFSCcode"> IFSC Code: </spring:label></div>
+			<div><spring:input path="benIFSCcode" type ="text" />
+			<spring:errors path="benIFSCcode" cssClass="error"/>
+			</div>
+		</div>
+		<br/>
+		<div><spring:label path="benBankName">Select Bank Name:</spring:label></div>
+		<div><spring:select path="benBankName">
+			 <spring:options items="${beneficiary.getBankNames()}"/>		
+			<%--  
+			  <spring:option value="HDFC" label="HDFC Bank"/>		
+			  <spring:option value="Axis" label="Axis Bank"/>
+			  <spring:option value="ICICI" label="ICICI Bank"/>		
+			  <spring:option value="SBI"label="State Bank of India"/>	
+			  <spring:option value="AB"label="AndhraBank"/>	
+			--%>
+			</spring:select>
+		</div>
+		<br/>
+		<div><spring:label path="benBranchCity">Select Branch City:</spring:label></div>
+		<div><spring:select path="benBranchCity">
+		<spring:options items="${beneficiary.getBranchCities()}"/>
+			<%-- 
+				<spring:option value="HYD">Hyderabad</spring:option>				
+			  	<spring:option value="BAN">Bangalore</spring:option>
+			  	<spring:option value="CHN">Chennai</spring:option>		
+			  	<spring:option value="NDL">New Delhi</spring:option>	
+			--%>
+			</spring:select>	
+		</div>	
+		<br/>
+		<div><spring:label path="benBranchName">Select Branch Name:</spring:label></div>
+		<div><spring:select path="benBranchName">
+			<spring:options items="${beneficiary.getBranchNames()}"/>	
+			<%-- 	 	
+			  <spring:option value="Kondapur">Kondapur</spring:option>		
+			  <spring:option value="Gachicbowli">Gachicbowli</spring:option>
+			  <spring:option value="Madhapur">Madhapur</spring:option>		
+			  <spring:option value="Ameerpet">Ameerpet</spring:option>
+		 	--%>
+			</spring:select>	
+		</div>
+		<br/>		
+	
+		<br/>
+		<div><spring:label path="benEmail">Enter Email ID</spring:label></div>
+		<div><spring:input path="benEmail" type ="text"/></div>
+		<br/>
+		<div><spring:label path="benContact">Enter Mobile #</spring:label></div>
+		<div><spring:input path="benContact" type ="text"/>
+			 <spring:errors path="benContact" cssClass="error"/>
+		</div>	
+		<br/>		
+		<div> 
+			<input type ="Submit" value="Add">
+		</div>
+		<br/>	
 </div>		
-</form>
+</spring:form>
 <hr/>
 	<a href="HomePage">Home</a>
 <hr/>

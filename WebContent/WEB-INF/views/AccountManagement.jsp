@@ -50,8 +50,8 @@
       <a href="SavingsAccount.jsp" >Savings Account</a>
        <a href="RequestStatement" >Request Statement</a>
       <br></br>
-      <a href="DebitCard.jsp">Debit Card</a>
-      <a href="CreditCard.jsp">Credit Card</a>           
+      <a href="DebitCard">Debit Card</a>
+      <a href="CreditCard">Credit Card</a>           
       <br></br>
       <a href="AddIBSBeneficiary.jsp"></a>
       <a href="AddNonIBSBeneficiary.jsp" >Add non IBS Benificiary</a>
