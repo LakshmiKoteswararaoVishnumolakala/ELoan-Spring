@@ -136,13 +136,5 @@ public class HomeController
 		
 		return "redirect:/";//~redirect to home page 
 	}
-	/*@GetMapping("/saveUserDetails")
-	public String saveProfilepro(HttpServletRequest request)
-	{
-		String RelationShip = request.getParameter("BankRelationship");		
-		System.out.println("from GET:"+RelationShip+"");
-		return "RegistrationConfirmation";
-		
-	}*/
-	
+
 }
