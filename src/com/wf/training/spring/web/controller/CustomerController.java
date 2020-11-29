@@ -105,7 +105,65 @@ public class CustomerController
 		
 		return "UpdateContactDetails";//~forward
 	}	
+	//****************Sukanya
+	@RequestMapping(value= {"/DebitCard"})
+	public String DebitCard()
+	{
+		//business logic		
+		return "DebitCard";
+	}	
 	
+	@RequestMapping(value= {"/CreditCard"})
+	public String CreditCard()
+	{
+		//business logic		
+		return "CreditCard";
+	}
+	
+	@RequestMapping(value= {"/RaiseAProblemTicket"})
+	public String RaiseAProblemTicket()
+	{
+		//business logic		
+		return "RaiseAProblemTicket";
+	}
+	@RequestMapping(value= {"/DebitCardTransactionSummary"})
+	public String DebitCardTransactionSummary()
+	{
+		//business logic		
+		return "DebitCardTransactionSummary";
+	}
+	
+	@RequestMapping(value= {"/ChangeDebitCardPin"})
+	public String ChangeDebitCardPin()
+	{
+		//business logic		
+		return "ChangeDebitCardPin";
+	}
+	
+	@RequestMapping(value= {"/Cards"})
+	public String Cards()
+	{
+		//business logic		
+		return "Cards";
+	}
+	
+	@RequestMapping(value= {"/CreditCardTransactionSummary"})
+	public String CreditCardTransactionSummary()
+	{
+		//business logic		
+		return "CreditCardTransactionSummary";
+	}
+	
+	@RequestMapping(value= {"/CreditCardPayment"})
+	public String CreditCardPayment()
+	{
+		//business logic		
+		return "CreditCardPayment";
+	}
+	
+	 
+	
+	//*********************
 	@PostMapping("/saveContactDetails")	
 	 //User user,Model model,String NewPassword, String ReEnterNewPassword	
 	public String saveContactDetails(User user, Model model, 
