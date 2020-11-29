@@ -161,7 +161,34 @@ public class CustomerController
 		return "CreditCardPayment";
 	}
 	
-	 
+	 @PostMapping("/DebitCardTransactionSummary")	
+	 //User user,Model model,String NewPassword, String ReEnterNewPassword	
+	public String displayTransacationDetails(HttpServletRequest request)
+	{
+		String debitCardNumber = request.getParameter("DebitCardNumber");
+	//String Test = "abc";
+		System.out.println("from Post:"+debitCardNumber);
+	CardsManagement cardsManagement = new CardsManagement();
+//	cardsManagement.setDebitCardNumber(Test);
+	
+	if (debitCardNumber.contentEquals("abc"))
+	{
+		System.out.println("test");
+		cardsManagement.setTransactionAmount("3000");
+		System.out.println(cardsManagement.getTransactionAmount());
+		cardsManagement.setTransactionDescription("Purchase");
+		cardsManagement.setTransactionRefNumber("1234567");
+		cardsManagement.setTransactionType("Debit");
+		}
+	else
+		
+			
+	{
+		System.out.println("did't worked");
+		return "HomePage";
+	}
+	return "DebitCardTransactionSummary";
+	}
 	
 	//*********************
 	@PostMapping("/saveContactDetails")	
