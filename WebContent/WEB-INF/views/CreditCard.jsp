@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title> Credit Card</title>
 </head>
+
 <style>
     body
     {
@@ -49,6 +50,7 @@
 <hr/>
 <form>
  <div id="wrapper">
+
 		<table>
 		<tr>
 			<td><label>Enter Credit Card Number</label></td>
@@ -59,6 +61,7 @@
 		<input type="submit" value ="Show Details"/>	
 		</td>
 		</tr>	
+
 		</table>				
 		<h3 align="left">Credit Card Information:</h3>
 		<h4> CreditCardNumber: ${CreditCard.getCreditCardNumber()} </h4>
@@ -83,5 +86,6 @@
 </form>
 <hr/>
 <jsp:include page="footer.jsp"/>
-</body>
+
+   </body>
 </html>

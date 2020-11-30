@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title> Credit Card Transaction Summary</title>
 </head>
+
 <style>
     body
     {
@@ -48,12 +49,13 @@
 <body>
 <form >	
  <div id="wrapper">	
+
 		<table>
 		<tr>
 			<td><label>Enter CustomerID</label></td>
 			<td><input type="text" name ="Customer ID"/></td>
 		</tr>
-		
+
 		<tr>
 				<td><label for="Transaction Type">Transaction Type</label></td>
 				<td><select name="Transaction Type">
@@ -65,6 +67,7 @@
 			</tr>
 		<tr>		
 			
+
 		</table>	
 		<h3 align="left"> Transaction Summary</h3>		
 		<h4> TransactionRefNumber: ${CrTransactionSummary.getCrTransactionRefNumber()} </h4>
@@ -84,4 +87,5 @@
 <hr/>
 <jsp:include page="footer.jsp"/>
 </body>
+
 </html>

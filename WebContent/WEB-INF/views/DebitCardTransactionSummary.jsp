@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="ISO-8859-1">
 
 </head>
@@ -85,4 +86,5 @@
 <hr/>
 <jsp:include page="footer.jsp"/>
 </body>
+
 </html>
