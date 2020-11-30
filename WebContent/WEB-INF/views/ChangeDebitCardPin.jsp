@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cards</title>
+<title>Change Debit Card Pin</title>
 </head>
-
-<style type="text/css">
+<style>
     body
     {
             font-family: inherit;
@@ -42,28 +41,36 @@
         border-color: purple;
         margin: .5%;
     }
-    .error
-    {
-    	color:red;    
-    }
 </style>
-
 <body>
 <jsp:include page="header.jsp"/>
-<h2 align="center"> Cards Management</h2>
-<hr/>	
-<form>
-<hr/>
-	<a href=HomePage>Go To Home Page</a>
- <div id="wrapper">
- 	  <h3> Select Card Type:</h3>
-	  <a href="DebitCard">DebitCard</a>
-	  <br></br>
-	  <a href="CreditCard">CreditCard</a>  
-	  <br></br>	  
- </div>
-</form>
-<hr/>
+<h2 align="center"> Change Debit Card Pin</h2>			
+<hr/>				
+		
+		
+		
+		<form >
+		<table>
+		<tr>
+			<td><label>Enter Current Debit Card Number</label></td>
+			<td><input type="text" name ="CurrentDebitCardPin"/></td>
+		</tr>
+		<tr>
+			<td><label>Enter New Debit Card Number</label></td>
+			<td><input type="text" name ="NewDebitCardPin"/></td>
+		</tr>
+		<tr>
+		<td>	
+		<input type="submit" value ="Show Details"/>	
+		</td>
+		</tr>	
+		</table>
+		</form>
+		
+			
+	<hr/>
+	<a href=DebitCard>Return to DebitCard</a>
+	<hr/>
 <jsp:include page="footer.jsp"/>
- </body>
+</body>
 </html>

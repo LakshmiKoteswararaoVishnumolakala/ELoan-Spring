@@ -47,11 +47,11 @@
 <jsp:include page="header.jsp"/>
 <h2 align="center"> Password Reset Confirmation</h2>
  <div id="wrapper">
-<hr/>
-<h4>Your Password has been changed successfully. </h4>
-<h4> Your  new Password is : ${user.getPassword()} </h4>
-<hr/>
-		<a href=HomePage>Home</a>
+	<hr/>
+	<h4>Your Password has been changed successfully. </h4>
+	<h4> Your  new Password is : ${user.getPassword()} </h4>
+	<hr/>
+			<a href=HomePage>Home</a>
 </div>
 <jsp:include page="footer.jsp"/>
 

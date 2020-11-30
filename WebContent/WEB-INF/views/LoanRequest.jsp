@@ -60,9 +60,7 @@ For example, to access a parameter named order, use the expression ${param.order
 
 
  <div id="wrapper">
-		<label> Customer ID:</label>	
-		<input type ="text" name="CustomerID"/>
-		<br><br/>
+		
 		
 		<label for="LoanCategory">Select Loan Type:</label>
 		<select name="LoanCategory" id="LoanCategory">
@@ -75,26 +73,16 @@ For example, to access a parameter named order, use the expression ${param.order
 		<label> Loan Amount:</label>	
 		<input type ="text" name="LoanAmount"/>
 		<br><br/>
-		<label> Loan Status:</label>	
-		<h4> Loan Status is is : ${user.getLoanStatus()} </h4>
+		
+		<label> Loan Interest:</label>
+		<input type="text" name="name" value="${loanmngmnt.interestrate}" />
 		<br><br/>
-		<label> Loan Start Date:</label>
-		<input type="text" name="name" value="LoanStartDate" />
+		<label> Loan Tenure:</label>
+		<input type="text" name="name" value="Tenure" />
 		<br><br/>
-		<label> Loan Stop Date:</label>
-		<input type="text" name="name" value="LoanStopDate" />
+	
+		<input type="submit" name="Submit"/>
 		<br><br/>
-		<label> Collector ID: </label>	
-		<input type ="text" name="CollectorID"/>
-		<br><br/>
-		<hr/>
-		<a href=index>Loan Repayment Schedule</a>
-		<br><br/>
-		<hr/>
-		<a href=index>Request New Loan</a>
-		<br><br/>
-		<hr/>
-		<a href=index>Close Request</a>
 		
 </div>
 

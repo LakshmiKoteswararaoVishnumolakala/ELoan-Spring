@@ -46,30 +46,44 @@
 <jsp:include page="header.jsp"/>
 <h2 align="center">Fund Transfer outside the bank</h2>
 <hr/>
- <div id="wrapper">
+<form action="transferOutsideIBS" method="post"> 
+<div id="wrapper">
 	
 		<label for="Relation">Select From Account:</label>
 			<select name="MyAccount" id="fromAccount">
 			<option value="select">Select Account...</option>
-			  <option value="account">My Account</option>					
+			<option value="account">My Account</option>					
 			</select>		
 			<br><br/>	
 			<label for="Relation">Select Added Payee:</label>
-			<select name="Beneficiary" id="payee">
+			 <select name="Beneficiary" id="payee">
 			  <option value="payee1">Payee 1</option>		
 			  <option value="payee2">Payee 2</option>
 			  <option value="payee3">Payee 3</option>			
 			</select>
-				<br><br/>	
+			
+		   <br>
+           <br>
+		   <input type="radio" id="imps" name="transferType" value="imps">
+           <label for="imps">IMPS</label><br>
+           <input type="radio" id="neft" name="transferType" value="neft">
+           <label for="neft">NEFT</label><br>
+           <input type="radio" id="rtgs" name="transferType" value="rtgs">
+           <label for="rtsg">RTGS</label>
+			
+			
+			<br><br/>	
 			<label> Enter Amount </label>	
 			<input type ="text" name="Amount"/>
 				<br><br/>	
 		    <label>Remarks</label>
-			<input type ="text" value =""/>
+			<input type ="text" id ="remarks" name = "remarks" placeholder="put remarks.."/>
+		
 		<br><br/>	
 			<input type ="submit" value ="Submit"/>
 		<br><br/>
 </div>
+</form>
 		<hr/>		
 	<a href="HomePage">Home</a>
 <hr/>

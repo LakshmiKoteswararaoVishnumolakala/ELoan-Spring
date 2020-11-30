@@ -53,7 +53,7 @@
 	  <br></br>
 	  <a href="LoanManagement">Loans</a>
 	  <br></br>
-	  <a href="Credit/Debit Card Management">Cards</a>
+	  <a href="Cards">Cards</a>
 	  <br></br>
 	  <a href="Utilities">Pay Utility Bills</a>
 	  <br></br>
@@ -62,7 +62,7 @@
 	   <a href="UpdateContactDetails">Update Contact Details</a>
 	  <br></br>
   	  <a href="index">Sign Out</a>
-  	  <br></br>
+  	  <br></br>  	
  </div>
  <hr/>
 <jsp:include page="footer.jsp"/>

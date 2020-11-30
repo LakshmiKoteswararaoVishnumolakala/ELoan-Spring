@@ -32,8 +32,9 @@ public class User
 	public String getCustomerID() {
 		return CustomerID;
 	}
-	public void setCustomerID(String customerID) {
-		CustomerID = customerID;
+	public void setCustomerID(String customerID) 
+	{
+		CustomerID = customerID;		
 	}
 	public String getPassword() 
 	{		
@@ -43,7 +44,7 @@ public class User
 	{
 		if (password.contentEquals(""))
 		{
-			Password = generateRandomPassword(10);
+			Password = generateRandomPassword(16);
 		}
 		else
 		{
@@ -204,7 +205,7 @@ public class User
 		}
 		public static void main(String[] args) 
 		{
-		    int len = 10;
+		    int len = 16;
 		    System.out.println(generateRandomPassword(len));
 		}
 

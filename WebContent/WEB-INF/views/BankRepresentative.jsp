@@ -8,7 +8,9 @@
 </head>
 <body>
 			
-		<form action="BankRepresentative.jsp" method="post">
+
+		<form action="BankRepresentative" method="post">
+
 		<table>
 		<tr>
 			<td><label>Enter CustomerID</label></td>
@@ -37,6 +39,8 @@
 	
 		
 			<label>Credit Card</label>
-			<a href=CreditCard.jsp>Credit Card</a>
+
+			<a href=CreditCard>Credit Card</a>
+
 </body>
 </html>

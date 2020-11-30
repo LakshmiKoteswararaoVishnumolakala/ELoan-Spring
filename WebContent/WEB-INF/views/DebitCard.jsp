@@ -4,39 +4,66 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Debit Card</title>
+<title>Debit Card </title>
 </head>
+<style>
+    body
+    {
+            font-family: inherit;
+            font-weight: 750;
+            background: lightgrey;  
+    }
+    h3
+    {
+       color: blue;
+    }
+    #wrapper
+    {
+        width= 20%;
+        margin: 3%;
+    }
+    a:hover
+    {
+        color: red;
+        background-color: aqua;
+    }
+    img
+    {
+        align-self: center;
+    }
+    .row:hover
+    {
+        color: white;
+        background-color: purple;
+    }
+    img{
+        border: solid;
+        border-color: purple;
+        margin: .5%;
+    }
+</style>
 <body>
 <jsp:include page="header.jsp"/>
-<h2 align="center"> Welcome To Integrated Banking System</h2>			
-<hr/>				
-		
-		
-			<label>Enter CustomerID</label>
-			<input type="text" name ="Customer ID">
-			<br></br>
-			<label>Debit Card Number</label>
-			<input type="text" name ="DebitCardNumber">
-			<br></br>
-		<label>Debit Card Type</label>
-			<input type="text" name ="DebitCardType">
-			<br></br>
-		<label>Customer Name</label>
-			<input type="text" name ="CustName">
-		<label>Balance</label>
-			<input type="text" name ="Balance">
-		<label>Debit Card Status</label>
-			<input type="text" name ="DebitCardStatus">
-		
-	
-	
-		<hr/>
-			<label>Request Transaction Summary</label>
-			<a href=DebitCardTransactionSummary.jsp>Request Transaction Summary</a>
-		<hr/>
-			<label>Raise a Problem Ticket</label>
-			<a href=RaiseAProblemTicket.jsp>Raise a Problem Ticket</a>
-			<hr/>
+<h2 align="center"> Debit Card Management</h2>
+<hr/>
+<form>
+ <div id="wrapper">
+	<a href=DebitCardTransactionSummary>Request Transaction Summary</a>
+	<br><br/>
+	<a href=RaiseAProblemTicket>Raise a Problem Ticket</a>
+	<br><br/>
+	<a href=ChangeDebitCardPin>Change Pin Number</a>
+	<br><br/>
+	<hr/>	
+	<a href=Cards>Go To Cards</a>	
+    <br><br/>
+    <a href=HomePage>Go To Home Page</a>
+	<br><br/>
+	<a href=AccountManagement>Account Management</a>
+	<br><br/>
+ </div>
+</form>
+<hr/>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

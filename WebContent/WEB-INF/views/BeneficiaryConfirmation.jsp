@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registration Confirmation</title>
+<title>Beneficiary Registration Confirmation</title>
 </head>
 <style>
     body
@@ -48,25 +48,23 @@
 <h2 align="center">Beneficiary Registration Successful</h2>
 <hr/>
  <div id="wrapper">
-		<a href=ListOfBeneficiaries>View List of Beneficiaries</a>
-<hr/>
-		<a href=HomePage>Go To Home Page</a>
-<hr/>
-<%-- SpEL will provide access over Model Object --%>
-<%-- will use getter methods 
-The param and paramValues objects give you access to the parameter values normally available through the request.getParameter and request.getParameterValues methods.
-For example, to access a parameter named order, use the expression ${param.order} or ${param["order"]}.
---%>
-<h3> Following Beneficiary details are added:</h3>
-<h4> BeneficiaryAccountNo: ${beneficiary.getBeneficiaryAccountNo()} </h4>
-<h4> BeneficiaryAccountName: ${beneficiary.getBeneficiaryAccountName()}</h4>
-<h4> IFSCcode:${beneficiary.getIFSCcode()}</h4>
-<h4> BankName:${beneficiary.getBankName()}</h4>
-<h4> BranchName:${beneficiary.getBranchName()}</h4>
-<h4> BranchCity:${beneficiary.getBranchCity()}</h4>
-<h4> EmailID:${beneficiary.getBeneficiary_Email()}</h4>
-<h4> Beneficiary_Contact:${beneficiary.getBeneficiary_Contact()}</h4>
- <div id="wrapper">
+	 <hr/>
+			<a href=ListOfBeneficiaries>View List of Beneficiaries</a>
+	<hr/>
+			<a href=HomePage>Go To Home Page</a>
+	<hr/>
+	<h3> Following beneficiary details are added successfully.</h3>
+	
+	<h4> Beneficiary Account No : 	${beneficiary.getBenAccountNo()} </h4>
+	<h4> Beneficiary Account Name : ${beneficiary.getBenAccountName()}</h4>
+	<h4> IFSC code  :				${beneficiary.getBenIFSCcode()}</h4>
+	<h4> Bank Name  :				${beneficiary.getBenBankName()}</h4>
+	<h4> Branch Name :				${beneficiary.getBenBranchName()}</h4>
+	<h4> Branch City :				${beneficiary.getBenBranchCity()}</h4>
+	<h4> Email ID :					${beneficiary.getBenEmail()}</h4>
+	<h4> Beneficiary Contact :		${beneficiary.getBenContact()}</h4>
+
+</div>
 <hr/>
 <jsp:include page="footer.jsp"/>
 </body>

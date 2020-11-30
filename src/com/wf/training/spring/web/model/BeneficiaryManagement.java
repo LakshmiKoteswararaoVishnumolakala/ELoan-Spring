@@ -1,114 +1,120 @@
 package com.wf.training.spring.web.model;
 
+import java.util.LinkedHashMap;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class BeneficiaryManagement 
 {
-	private String BeneficiaryAccountNo;
-	private String BeneficiaryAccountName;
-	private String IFSCcode;
-	private String BankName;
-	private String BranchName;
-	private String BranchCity;
-	private String Beneficiary_Email;
-	private String Beneficiary_Contact;
-
-	public BeneficiaryManagement(String beneficiaryAccountNo, String beneficiaryAccountName, String iFSCcode,
-			String bankName, String branchName, String branchCity, String beneficiary_Email,
-			String beneficiary_Contact) {
-		super();
-		BeneficiaryAccountNo = beneficiaryAccountNo;
-		BeneficiaryAccountName = beneficiaryAccountName;
-		IFSCcode = iFSCcode;
-		BankName = bankName;
-		BranchName = branchName;
-		BranchCity = branchCity;
-		Beneficiary_Email = beneficiary_Email;
-		Beneficiary_Contact = beneficiary_Contact;
+	@NotNull(message="Account Number is required!")
+	private Integer benAccountNo;
+	@NotBlank(message="Account Name is required!")
+	private String benAccountName;
+	@NotBlank(message="IFSC Code is required!")
+	private String benIFSCcode;	
+	private String benBankName;	
+	private LinkedHashMap<String,String> bankNames;
+	private String benBranchName;	
+	private LinkedHashMap<String,String> branchNames;
+	private String benBranchCity;
+	private LinkedHashMap<String,String> branchCities;
+	@Email
+	private String benEmail;
+	@NotBlank(message="Contact Number is required!")
+	private String benContact;	
+	
+	public BeneficiaryManagement() 
+	{
+		this.bankNames = new LinkedHashMap<String,String>();
+		this.bankNames.put("HDFC", "HDFC Bank");
+		this.bankNames.put("Axis", "Axis Bank");
+		this.bankNames.put("ICICI", "ICICI Bank");
+		this.bankNames.put("SBI","State Bank of India");
+		this.bankNames.put("AB","Andhra Bank");
+		
+		this.branchNames = new LinkedHashMap<String,String>();
+		this.branchNames.put("HYD", "HYDERABAD");
+		this.branchNames.put("BAN", "BANGALORE");
+		this.branchNames.put("CHN", "CHENNAI");
+		this.branchNames.put("KOL","KOLKATA");
+		
+		this.branchCities = new LinkedHashMap<String,String>();
+		this.branchCities.put("Kondapur", "Kondapur");
+		this.branchCities.put("Gachicbowli", "Gachicbowli");
+		this.branchCities.put("Madhapur", "Madhapur");
+		this.branchCities.put("Ameerpet","Ameerpet");
+	
 	}
 	
-	public String getBeneficiaryAccountNo() {
-		return BeneficiaryAccountNo;
+	public Integer getBenAccountNo() 
+	{
+		return benAccountNo;
 	}
-
-
-	public void setBeneficiaryAccountNo(String beneficiaryAccountNo) {
-		BeneficiaryAccountNo = beneficiaryAccountNo;
+	public void setBenAccountNo(Integer benAccountNo) {
+		this.benAccountNo = benAccountNo;
 	}
-
-
-	public String getBeneficiaryAccountName() {
-		return BeneficiaryAccountName;
+	public String getBenAccountName() {
+		return benAccountName;
 	}
-
-
-	public void setBeneficiaryAccountName(String beneficiaryAccountName) {
-		BeneficiaryAccountName = beneficiaryAccountName;
+	public void setBenAccountName(String benAccountName) {
+		this.benAccountName = benAccountName;
 	}
-
-
-	public String getIFSCcode() {
-		return IFSCcode;
+	public String getBenIFSCcode() {
+		return benIFSCcode;
 	}
-
-
-	public void setIFSCcode(String iFSCcode) {
-		IFSCcode = iFSCcode;
+	public void setBenIFSCcode(String benIFSCcode) {
+		this.benIFSCcode = benIFSCcode;
 	}
-
-
-	public String getBankName() {
-		return BankName;
+	
+	public LinkedHashMap<String, String> getBankNames() 
+	{
+		return bankNames;
 	}
-
-
-	public void setBankName(String bankName) {
-		BankName = bankName;
+	
+	public String getBenBankName() {
+		return benBankName;
 	}
-
-
-	public String getBranchName() {
-		return BranchName;
+	
+	public void setBenBankName(String benBankName) {
+		this.benBankName = benBankName;
 	}
-
-
-	public void setBranchName(String branchName) {
-		BranchName = branchName;
+	
+	public LinkedHashMap<String, String> getBranchNames() {
+		return branchNames;
 	}
-
-
-	public String getBranchCity() {
-		return BranchCity;
+	
+	public String getBenBranchName() {
+		return benBranchName;
+	}	
+	
+	public void setBenBranchName(String benBranchName) {
+		this.benBranchName = benBranchName;
 	}
-
-
-	public void setBranchCity(String branchCity) {
-		BranchCity = branchCity;
+		
+	public LinkedHashMap<String, String> getBranchCities() {
+		return branchCities;
 	}
-
-
-	public String getBeneficiary_Email() {
-		return Beneficiary_Email;
+	
+	public String getBenBranchCity() {
+		return benBranchCity;
 	}
-
-
-	public void setBeneficiary_Email(String beneficiary_Email) {
-		Beneficiary_Email = beneficiary_Email;
+	public void setBenBranchCity(String benBranchCity) {
+		this.benBranchCity = benBranchCity;
 	}
-
-
-	public String getBeneficiary_Contact() {
-		return Beneficiary_Contact;
+	
+	public String getBenEmail() {
+		return benEmail;
 	}
-
-
-	public void setBeneficiary_Contact(String beneficiary_Contact) {
-		Beneficiary_Contact = beneficiary_Contact;
+	public void setBenEmail(String benEmail) {
+		this.benEmail = benEmail;
 	}
-
-
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public String getBenContact() {
+		return benContact;
 	}
-
+	public void setBenContact(String benContact) 
+	{
+		this.benContact = benContact;
+	}
 }

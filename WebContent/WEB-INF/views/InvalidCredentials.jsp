@@ -43,10 +43,11 @@
     }
 </style>
 <body>
-
-<h1 align="center">Invalid Credentials. Please enter correct Customer ID and Password.</h1>
-<h4>Click on Forgot Password, in case if you forgot password.</h4>
-<h4>(OR) Call our IBS customer care at 1800-1800-1800, in case if you forgot Customer ID.</h4>
+<jsp:include page="header.jsp"/>
+<hr/>
+<h2 align="center">Invalid Credentials. Please enter correct Customer ID and Password.</h2>
+<h4 align="center">Click on Forgot Password, in case if you forgot password.</h4>
+<h4 align="center">(OR) Call our IBS customer care at 1800-1800-1800, in case if you forgot Customer ID.</h4>
  <div id="wrapper">
 <hr/>
 		<a href=index>Go to Login Page</a>
@@ -55,6 +56,7 @@
 <hr/>
    <a href=UserRegistration>New User Registration</a>
 <hr/>
+<jsp:include page="footer.jsp"/>
 </div>
 </body>
 </html>

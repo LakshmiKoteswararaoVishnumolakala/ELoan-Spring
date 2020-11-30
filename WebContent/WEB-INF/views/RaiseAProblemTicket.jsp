@@ -36,8 +36,8 @@
 	</form>
 	
 		<hr/>
-			<label>Request Transaction Summary</label>
-			<a href=DebitCard.jsp>DebitCard</a>
-		
+			
+			<a href=DebitCard>DebitCard</a>
+	
 </body>
 </html>
